@@ -18,3 +18,4 @@ class Comments(models.Model):
     comments=models.TextField()
     created_by=models.ForeignKey(User,related_name='comments',on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
+    
