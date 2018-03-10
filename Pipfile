@@ -1,15 +1,12 @@
 [[source]]
 
-name = "pypi"
 verify_ssl = true
+name = "pypi"
 url = "https://pypi.python.org/simple"
 
 
 [packages]
 
-django = "*"
-djangorestframework = "*"
-gunicorn = "*"
 
 
 [dev-packages]
