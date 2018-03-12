@@ -31,10 +31,12 @@ class ListPost(generics.ListCreateAPIView):
 class DetailPost(generics.RetrieveUpdateDestroyAPIView):
     queryset= models.Post.objects.all()
     serializer_class=serializers.PostsSerializers
+    permission_classes=(permissions.IsAuthenticated,IsOwner)
 
 class ListComments(generics.ListCreateAPIView):
     queryset= models.Comments.objects.all()
     serializer_class=serializers.CommentsSerializers
+    permission_classes=(permissions.IsAuthenticated,IsOwner)
 
     def perform_create(self , serializer):
         serializer.save(created_by=self.request.user)
@@ -43,3 +45,4 @@ class ListComments(generics.ListCreateAPIView):
 class DetailComments(generics.RetrieveUpdateDestroyAPIView):
     queryset= models.Comments.objects.all()
     serializer_class=serializers.CommentsSerializers
+    permission_classes=(permissions.IsAuthenticated,IsOwner)
